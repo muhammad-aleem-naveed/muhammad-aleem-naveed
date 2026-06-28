@@ -377,7 +377,7 @@ export default function App() {
                 <Github size={18} />
               </a>
               <a
-                href="https://www.linkedin.com/in/aleem-developer"
+                href="https://www.linkedin.com/in/muhammad-aleem-naveed"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
