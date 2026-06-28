@@ -20,7 +20,7 @@ I also write about how I build — I authored a published guide on practical AI 
 ### 🛠️ Featured Projects
 
 **🌐 [PDF Translation Tool](#)**
-A desktop app that translates PDFs across 50+ languages while fully preserving the original formatting and layout. Built solo, packaged as a standalone Windows executable, in 2 days — using only free and open resources, no paid APIs.
+A desktop app that translates PDFs across 10+ languages while fully preserving the original formatting and layout. Built solo, packaged as a standalone Windows executable, in 2 days — using only free and open resources, no paid APIs.
 `Python` `Tkinter/GUI` `AI-Directed Development`
 
 **🛡️ [Distraction & Content Blocker](#)**
