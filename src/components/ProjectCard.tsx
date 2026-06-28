@@ -27,6 +27,8 @@ export default function ProjectCard({
     <Reveal>
       <motion.a
         href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover="hover"
         initial="rest"
         className="group relative flex flex-col h-full rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden"

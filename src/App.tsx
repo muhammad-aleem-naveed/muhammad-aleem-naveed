@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowUpRight,
@@ -10,6 +10,8 @@ import {
   Languages,
   GitBranch,
   Users,
+  Menu,
+  X,
 } from "lucide-react";
 import Reveal from "./components/Reveal";
 import ToolRouter from "./components/ToolRouter";
@@ -17,6 +19,7 @@ import ProjectCard from "./components/ProjectCard";
 
 export default function App() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -63,7 +66,36 @@ export default function App() {
               Contact
             </a>
           </nav>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="md:hidden w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-white/30 transition-colors"
+          >
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
         </div>
+        {menuOpen && (
+          <nav className="md:hidden border-t border-white/[0.06] bg-black/90 backdrop-blur-xl px-6 py-4 flex flex-col gap-3 text-sm text-white/70">
+            <a href="#work" onClick={() => setMenuOpen(false)} className="py-2 hover:text-white transition-colors">
+              Projects
+            </a>
+            <a href="#method" onClick={() => setMenuOpen(false)} className="py-2 hover:text-white transition-colors">
+              Method
+            </a>
+            <a href="#about" onClick={() => setMenuOpen(false)} className="py-2 hover:text-white transition-colors">
+              About
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-1 text-center text-white border border-white/20 rounded-full px-4 py-2.5 hover:bg-white hover:text-black transition-all duration-300"
+            >
+              Contact
+            </a>
+          </nav>
+        )}
       </header>
 
       {/* ---------- HERO ---------- */}
@@ -336,14 +368,18 @@ export default function App() {
 
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://github.com/muhammad-aleem-naveed"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300"
               >
                 <Github size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/aleem-developer"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300"
               >
